@@ -3,6 +3,10 @@
 const inquirer = require('inquirer');
 const { generateMenuQuestions } = require('./lib/menu.js');
 const { generateEngineerInfo, generateInternInfo } = require('./lib/team.js');
+const { cardManager } = require('./lib/cards.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
+const Manager = require('./lib/Manager.js');
 const teamMembers = [];
 
 inquirer
@@ -32,7 +36,6 @@ inquirer
 	.then((answers) => {
 		console.log(answers);
 		const { menuOpt } = answers;
-
 		switch (menuOpt) {
 			case '0':
 				return;
