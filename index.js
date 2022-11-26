@@ -3,7 +3,7 @@
 const inquirer = require('inquirer');
 const { generateMenuQuestions } = require('./lib/menu.js');
 const { generateEngineerInfo, generateInternInfo } = require('./lib/team.js');
-const teamMembers = [];
+const { teamMembers, generateTeamMemebrs } = require('./lib/teamMembers.js');
 
 inquirer
 	.prompt([
@@ -31,11 +31,14 @@ inquirer
 	])
 	.then((answers) => {
 		console.log(answers);
+		generateTeamMemebrs(answers);
+
 		const { menuOpt } = answers;
 
 		switch (menuOpt) {
 			case '0':
-				return;
+				console.log(teamMembers);
+				break;
 			case '1':
 				generateEngineerInfo();
 				break;
