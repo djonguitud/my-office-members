@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1250px;
+	margin: 0 auto;
+	min-height: 100vh;
+	color: var(--font-temporal-color);
+	display: flex;
+	flex-direction: column;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#team {
+	min-height: 500px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+@media screen and (max-width: 640px) {
+	.card {
+		margin-top: 1em;
+		min-width: 150px;
+	}
+}
