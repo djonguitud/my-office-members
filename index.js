@@ -1,6 +1,7 @@
 'use strict';
 
 import inquirer from 'inquirer';
+import Manager from './lib/Manager.js';
 import { generateMenuQuestions } from './lib/menu.js';
 import { generateEngineerInfo, generateInternInfo } from './lib/team.js';
 import { teamMembers, generateTeamMemebrs } from './lib/teamMembers.js';
@@ -30,10 +31,9 @@ inquirer
 		generateMenuQuestions(),
 	])
 	.then((answers) => {
-		console.log(answers);
-		generateTeamMemebrs(answers);
-
-		const { menuOpt } = answers;
+		const { name, id, email, officeNumber, menuOpt } = answers;
+		const myManager = new Manager(name, id, email, officeNumber);
+		generateTeamMemebrs(myManager);
 
 		switch (menuOpt) {
 			case '0':
