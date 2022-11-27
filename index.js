@@ -1,9 +1,9 @@
 'use strict';
 
-const inquirer = require('inquirer');
-const { generateMenuQuestions } = require('./lib/menu.js');
-const { generateEngineerInfo, generateInternInfo } = require('./lib/team.js');
-const { teamMembers, generateTeamMemebrs } = require('./lib/teamMembers.js');
+import inquirer from 'inquirer';
+import { generateMenuQuestions } from './lib/menu.js';
+import { generateEngineerInfo, generateInternInfo } from './lib/team.js';
+import { teamMembers, generateTeamMemebrs } from './lib/teamMembers.js';
 
 inquirer
 	.prompt([
